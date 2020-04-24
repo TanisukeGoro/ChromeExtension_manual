@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "Chrome Extension Playground",
+  "version": "0.1.0",
+  "author": "Okita Kamegoro",
+  "browser_action": {
+      "default_icon": "./icon.png"
+  },
+  "background": {
+      "scripts": [
+          "background.js"
+      ],
+      "persistent": false
+  },
+  "icons": {
+    "128": "./icon.png"
+  },
+  "content_scripts": [{
+      "matches": [
+          "http://*/*",
+          "https://*/*"
+      ],
+      "js": [
+          "contents_script.js"
+      ]
+  }],
+  "permissions": ["activeTab"],
+  "description": "Chrome拡張機能の機能をテストする",
+  "short_name": "Chrome Extension Playground"
+}
